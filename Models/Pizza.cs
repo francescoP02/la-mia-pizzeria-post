@@ -26,6 +26,11 @@ namespace la_mia_pizzeria_static.Models
         [Required(ErrorMessage = "Il campo prezzo è obbligatorio")]
         public float Price { get; set; }
 
+        public Pizza()
+        {
+
+        }
+
         public Pizza(string name, string description, string photo, float price)
         {
             Name = name;
