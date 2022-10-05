@@ -11,9 +11,19 @@ namespace la_mia_pizzeria_static.Models
     {
         [Key]
         public int Id { get; private set; }
+
+        [Required(ErrorMessage = "Il campo nome è obbligatorio")]
+        [StringLength(25, ErrorMessage = "Il nome non può avere più di 25 caratteri")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "Il campo descrizione è obbligatorio")]
+        [StringLength(255, ErrorMessage = "Il nome non può avere più di 255 caratteri")]
         public string Description { get; set; }
+
+        [Required(ErrorMessage = "Il campo foto è obbligatorio")]
         public string Photo { get; set; }
+
+        [Required(ErrorMessage = "Il campo prezzo è obbligatorio")]
         public float Price { get; set; }
 
         public Pizza(string name, string description, string photo, float price)
