@@ -1,3 +1,5 @@
+using la_mia_pizzeria_static;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
