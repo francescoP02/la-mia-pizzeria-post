@@ -70,14 +70,16 @@ namespace la_mia_pizzeria_static.Controllers
             using (PizzaContext db = new PizzaContext())
             {
 
-                Pizza p = db.pizzasList.Where(x => x.Id == id).First<Pizza>();
+                try
+                {
+                    Pizza p = db.pizzasList.Where(x => x.Id == id).First<Pizza>();
+                    return View("Show", p);
+                }
+                catch
+                {
+                    return View("Error");
+                }
 
-                //if (id != p.Id)
-                //{
-                //    return View("Error");
-                //}
-
-                return View("Show", p);
             }
 
         }
